@@ -1,7 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { EventoService } from '../../services/evento.service';
-import { Evento } from '../../models/Evento';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-eventos',

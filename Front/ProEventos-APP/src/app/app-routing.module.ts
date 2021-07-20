@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   {path: 'dashboard', component: DashboardComponent},
   {path: 'contatos', component: ContatosComponent},
-  {path: 'palestrante', component: PalestrantesComponent},
+  {path: 'palestrantes', component: PalestrantesComponent},
   {path: '', redirectTo: 'dashbord', pathMatch: 'full'},
   {path: '**', redirectTo: 'dashbord', pathMatch: 'full'}
 ];

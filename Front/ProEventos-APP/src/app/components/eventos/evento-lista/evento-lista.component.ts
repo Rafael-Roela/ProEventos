@@ -1,7 +1,11 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
+
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { Evento } from 'src/app/models/Evento';
+import { ToastrService } from 'ngx-toastr';
+
 import { EventoService } from 'src/app/services/evento.service';
+import { Evento } from 'src/app/models/Evento';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,8 +13,15 @@ import { Router } from '@angular/router';
   templateUrl: './evento-lista.component.html',
   styleUrls: ['./evento-lista.component.scss']
 })
-export class EventoListaComponent implements OnInit {
+export class EventoListaComponent implements OnInit{
+  title = 'ngx-skeleton-loader-demo';
 
+  animation = 'pulse';
+  contentLoaded = false;
+  count = 2;
+  widthHeightSizeInPixels = 50;
+
+  intervalId: number | null = null;
 
   modalRef!: BsModalRef;
   public eventos: Evento[] = [];
@@ -41,11 +52,11 @@ export class EventoListaComponent implements OnInit {
   constructor(
     private eventoService: EventoService,
     private modalService: BsModalService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService,
     ) { }
 
   public ngOnInit(): void {
-
     this.getEventos();
   }
 
@@ -60,6 +71,8 @@ export class EventoListaComponent implements OnInit {
         this.eventosFiltrados = this.eventos;
       },
       error: (error: any) => {
+        this.toastr.error('Error ao Carregar os Evenos!', 'Erro!');
+
       },
     });
   }
@@ -70,6 +83,7 @@ export class EventoListaComponent implements OnInit {
 
   confirm(): void {
     this.modalRef.hide();
+    this.toastr.success('O Evento foi Deletado com Sucesso!', 'Deletado!');
   }
 
   decline(): void {
