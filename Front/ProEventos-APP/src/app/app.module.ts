@@ -66,5 +66,6 @@ import { RegistrationComponent } from './components/user/registration/registrati
   ],
   providers: [EventoService],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
