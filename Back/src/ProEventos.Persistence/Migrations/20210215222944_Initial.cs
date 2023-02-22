@@ -11,15 +11,15 @@ namespace ProEventos.Persistence.Migrations
                 name: "Eventos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Local = table.Column<string>(type: "TEXT", nullable: true),
-                    DataEvento = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    Tema = table.Column<string>(type: "TEXT", nullable: true),
-                    QtdPessoas = table.Column<int>(type: "INTEGER", nullable: false),
-                    ImagemURL = table.Column<string>(type: "TEXT", nullable: true),
-                    Telefone = table.Column<string>(type: "TEXT", nullable: true),
-                    Email = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Local = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataEvento = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Tema = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    QtdPessoas = table.Column<int>(type: "int", nullable: false),
+                    ImagemURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -30,13 +30,13 @@ namespace ProEventos.Persistence.Migrations
                 name: "Palestrantes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    MiniCurriculo = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemURL = table.Column<string>(type: "TEXT", nullable: true),
-                    Telefone = table.Column<string>(type: "TEXT", nullable: true),
-                    Email = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MiniCurriculo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImagemURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -47,14 +47,14 @@ namespace ProEventos.Persistence.Migrations
                 name: "Lotes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Preco = table.Column<decimal>(type: "TEXT", nullable: false),
-                    DataInicio = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    DataFim = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    Quantidade = table.Column<int>(type: "INTEGER", nullable: false),
-                    EventoId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Preco = table.Column<decimal>(type: "nvarchar(max)", nullable: false),
+                    DataInicio = table.Column<DateTime>(type: "nvarchar(max)", nullable: true),
+                    DataFim = table.Column<DateTime>(type: "nvarchar(max)", nullable: true),
+                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    EventoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -71,8 +71,8 @@ namespace ProEventos.Persistence.Migrations
                 name: "PalestrantesEventos",
                 columns: table => new
                 {
-                    PalestranteId = table.Column<int>(type: "INTEGER", nullable: false),
-                    EventoId = table.Column<int>(type: "INTEGER", nullable: false)
+                    PalestranteId = table.Column<int>(type: "int", nullable: false),
+                    EventoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,12 +95,12 @@ namespace ProEventos.Persistence.Migrations
                 name: "RedesSociais",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    URL = table.Column<string>(type: "TEXT", nullable: true),
-                    EventoId = table.Column<int>(type: "INTEGER", nullable: true),
-                    PalestranteId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    URL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EventoId = table.Column<int>(type: "int", nullable: true),
+                    PalestranteId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

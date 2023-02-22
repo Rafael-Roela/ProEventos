@@ -1,4 +1,3 @@
-
 <div class="card rounded shadow-sm p-3">
 
   <div class="d-flex">
@@ -59,7 +58,7 @@
       <td class="d-none d-md-table-cell">{{evento.qtdPessoas}}</td>
       <td class="d-none d-md-table-cell">{{evento.lotes[0]?.nome | uppercase}}</td>
       <td>
-        <button type="button" class="btn btn-danger btn-lg" tooltip="Excluir" (click)="openModal($event, template, eventoId)">
+        <button type="button" class="btn btn-danger btn-lg" tooltip="Excluir" (click)="openModal($event, template, evento.id)">
           <i class="fa fa-trash"></i>
         </button>
       </td>

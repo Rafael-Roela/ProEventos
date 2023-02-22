@@ -16,7 +16,7 @@ export class EventoListaComponent implements OnInit {
   modalRef: BsModalRef;
   public eventos: Evento[] = [];
   public eventosFiltrados: Evento[] = [];
-  public eventoId: number;
+  public eventoId = 0;
 
   public larguraImagem = 150;
   public margemImagem = 2;
@@ -49,7 +49,7 @@ export class EventoListaComponent implements OnInit {
   ) { }
 
   public ngOnInit(): void {
-    this.spinner.show();
+    // this.spinner.show();
     this.carregarEventos();
   }
 
@@ -90,17 +90,17 @@ export class EventoListaComponent implements OnInit {
       },
       (error: any) => {
         console.error(error);
-        this.toastr.error(`Erro ao tentar deletar o Evento ${this.eventoId}`, 'Erro!');
+        this.toastr.error(`Erro ao tentar deletar o evento ${this.eventoId}`, 'Erro');
       }
     ).add(() => this.spinner.hide());
   }
 
-    decline(): void {
-      this.modalRef.hide();
-    }
+  decline(): void {
+    this.modalRef.hide();
+  }
 
-    detalheEvento(id: number): void{
-      this.router.navigate([`eventos/detalhe/${id}`]);
-    }
+  detalheEvento(id: number): void{
+    this.router.navigate([`eventos/detalhe/${id}`]);
+  }
 
 }
