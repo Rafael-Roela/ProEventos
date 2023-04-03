@@ -17,12 +17,16 @@
       "dom"
     ],
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@environments/*": ["src/environments/*"]
-    }
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@environments/*": [
+        "src/environments/*"
+      ]
+    },
   },
   "angularCompilerOptions": {
-    "scritTamplates": true,
-    "scritInjectionParameters": true
+    "strictInjectionParameters": true,
+    "strictTemplates": true
   }
 }

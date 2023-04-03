@@ -80,7 +80,6 @@ export class PerfilComponent implements OnInit {
     this.atualizarUsuario();
   }
 
-  // tslint:disable-next-line: typedef
   public atualizarUsuario() {
     this.userUpdate = { ...this.form.value };
     this.spinner.show();

@@ -52,7 +52,7 @@ export class RegistrationComponent implements OnInit {
     this.accountService.register(this.user).subscribe(
       () => this.router.navigateByUrl('/dashboard'),
       (error: any) => this.toaster.error(error.error)
-    );
+    )
   }
 
 }

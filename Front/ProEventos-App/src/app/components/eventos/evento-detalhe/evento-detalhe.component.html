@@ -1,14 +1,13 @@
 <div class="row">
   <div [ngClass]="{'col-md-8 pr-0': modoEditar, 'col-md-12': !modoEditar}">
-
     <div class="card rounded shadow-sm">
       <form [formGroup]="form">
         <div class="p-3">
           <div class="form-row">
             <div class="form-group col-md-12">
               <label>Tema</label>
-              <input type="text" class="form-control" [ngClass]="cssValidator(f.tema)"
-              formControlName="tema" placeholder="Insira o Tema" [(ngModel)]="evento.tema">
+              <input type="text" class="form-control" [ngClass]="cssValidator(f.tema)" formControlName="tema"
+              placeholder="Insira o Tema" [(ngModel)]="evento.tema">
               <div *ngIf="f.tema.errors?.required" class="invalid-feedback">
                 Tema é obrigatório.
               </div>
@@ -31,12 +30,9 @@
             </div>
             <div class="form-group col-md-4">
               <label>Data e Hora</label>
-              <input type="datetime" class="form-control"
-              [ngClass]="cssValidator(f.dataEvento)"
-              value="{{evento.dataEvento | DateFormatPipe}}"
-              bsDatepicker
-              [bsConfig]="bsConfig"
-              formControlName="dataEvento" placeholder="" [(ngModel)]="evento.dataEvento">
+              <input type="datetime" class="form-control" [ngClass]="cssValidator(f.dataEvento)"
+              value="{{evento.dataEvento | DateFormatPipe}}" bsDatepicker [bsConfig]="bsConfig" formControlName="dataEvento"
+              placeholder="" [(ngModel)]="evento.dataEvento">
               <div *ngIf="f.dataEvento.errors?.required && f.dataEvento.touched" class="invalid-feedback">
                 Data e Hora é obrigatório.
               </div>
@@ -45,8 +41,8 @@
           <div class="form-row">
             <div class="form-group col-md-2">
               <label>Qtd Pessoas</label>
-              <input type="number" class="form-control" [ngClass]="cssValidator(f.qtdPessoas)"
-              formControlName="qtdPessoas" placeholder="" [(ngModel)]="evento.qtdPessoas">
+              <input type="number" class="form-control" [ngClass]="cssValidator(f.qtdPessoas)" formControlName="qtdPessoas"
+              placeholder="" [(ngModel)]="evento.qtdPessoas">
               <div *ngIf="f.qtdPessoas.errors?.required && f.qtdPessoas.touched" class="invalid-feedback">
                 Qtd Pessoas é obrigatório.
               </div>
@@ -73,6 +69,7 @@
                 Deve ser um endereço de e-mail válido
               </div>
             </div>
+
           </div>
         </div>
         <div class="card-footer">
@@ -88,7 +85,6 @@
         </div>
       </form>
     </div>
-
     <div class="card rounded shadow-sm mt-3" *ngIf="modoEditar">
       <div class="p-3">
         <div class="d-flex border-bottom">
@@ -106,12 +102,8 @@
               <fieldset [formGroupName]="i" class="form-group">
                 <legend class="d-flex justify-content-between capitalize">
                   {{ retornaTituloLote(lotes.get(i+'.nome').value) }}
-                  <button (click)="removerLote(template, i)"
-                  class="p-2 btn btn-sm btn-outline-warning mb-1 d-flex"
-                  tooltip="Excluir Lote"
-                  [adaptivePosition]="false"
-                  [delay]="500"
-                  placement="left">
+                  <button (click)="removerLote(template, i)" class="p-2 btn btn-sm btn-outline-warning mb-1 d-flex" tooltip="Excluir Lote"
+                  [adaptivePosition]="false" [delay]="500" placement="left">
                   <i class="fa fa-window-close my-1"></i>
                   <b class="ml-1 d-none d-sm-block">Excluir</b>
                 </button>
@@ -180,8 +172,8 @@
       </div>
     </div>
   </div>
-  </div>
-  <div class="col-md-4" *ngIf="modoEditar">
+</div>
+<div class="col-md-4" *ngIf="modoEditar">
   <div [formGroup]="form" class="card-evento-view shadow-sm">
     <div class="form-row">
       <div class="form-group m-0">
@@ -190,7 +182,7 @@
     </div>
     <div class="card profile-card-2">
       <div class="card-img-block">
-        <img class="image" [src]="imagemURL"  class="img-fluid" (click)="file.click()" alt="Card image cap"
+        <img class="image" [src]="imagemURL" class="img-fluid" (click)="file.click()" alt="Card image cap"
         tooltip="Uplaod de Nova Imagem" [adaptivePosition]="false" placement="bottom" />
       </div>
       <div class="card-body pt-3">
@@ -224,7 +216,7 @@
       </div>
     </div>
   </div>
-  </div>
+</div>
 </div>
 
 <br>

@@ -11,7 +11,6 @@ export class AppComponent {
 
   constructor(public accountService: AccountService) {}
 
-  // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit(): void {
     this.setCurrentUser();
   }
@@ -19,15 +18,13 @@ export class AppComponent {
   setCurrentUser(): void {
     let user: User;
 
-    if (localStorage.getItem('user')) {
+    if (localStorage.getItem('user'))
       user = JSON.parse(localStorage.getItem('user') ?? '{}');
-    }
-    else {
-      user = null;
-    }
+    else
+      user = null
 
-    if (user) {
+    if (user)
       this.accountService.setCurrentUser(user);
-    }
   }
+
 }

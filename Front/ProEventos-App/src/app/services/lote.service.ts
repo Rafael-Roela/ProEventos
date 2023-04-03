@@ -8,10 +8,9 @@ import { take } from 'rxjs/operators';
 
 @Injectable()
 export class LoteService {
-
   baseURL = 'https://localhost:5001/api/lotes';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getLotesByEventoId(eventoId: number): Observable<Lote[]> {
     return this.http.get<Lote[]>(`${this.baseURL}/${eventoId}`).pipe(take(1));
@@ -28,5 +27,4 @@ export class LoteService {
       .delete(`${this.baseURL}/${eventoId}/${loteId}`)
       .pipe(take(1));
   }
-
 }

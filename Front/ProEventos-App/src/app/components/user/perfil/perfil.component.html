@@ -15,7 +15,6 @@
           <div class="card-body">
             <div class="h4 text-center mb-3">@{{f.userName.value}}</div>
             <div class="h7 text-bold pb-1"><b>Nome:</b> {{f.primeiroNome.value + ' ' + f.ultimoNome.value}}</div>
-            <br/>
             <div class="h7">
               {{f.descricao.value}}
             </div>
@@ -46,7 +45,7 @@
             <label>Título</label>
             <select formControlName="titulo" class="form-control"
             [ngClass]="{ 'is-invalid': f.titulo.errors && f.titulo.touched }">
-            <option value="NaoInformado">Não Tenho</option>
+            <option value="NaoInformado">Não Quero</option>
             <option value="Tecnologo">Tecnólogo(a)</option>
             <option value="Bacharel">Bacharel</option>
             <option value="Especialista">Especialista</option>
