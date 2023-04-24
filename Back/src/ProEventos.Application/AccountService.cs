@@ -44,7 +44,7 @@ namespace ProEventos.Application
                 throw new Exception($"Erro ao tentar verificar password. Erro: {ex.Message}");
             }
         }
-
+//---------------------------------------------------------------------------------------------------------------------------
         public async Task<UserUpdateDto> CreateAccountAsync(UserDto userDto)
         {
             try
@@ -65,7 +65,7 @@ namespace ProEventos.Application
                 throw new Exception($"Erro ao tentar Criar Usuário. Erro: {ex.Message}");
             }
         }
-
+//---------------------------------------------------------------------------------------------------------------------------
         public async Task<UserUpdateDto> GetUserByUserNameAsync(string userName)
         {
             try
@@ -81,7 +81,7 @@ namespace ProEventos.Application
                 throw new Exception($"Erro ao tentar pegar Usuário por Username. Erro: {ex.Message}");
             }
         }
-
+//---------------------------------------------------------------------------------------------------------------------------
         public async Task<UserUpdateDto> UpdateAccount(UserUpdateDto userUpdateDto)
         {
             try
@@ -114,7 +114,7 @@ namespace ProEventos.Application
                 throw new Exception($"Erro ao tentar atualizar usuário. Erro: {ex.Message}");
             }
         }
-
+//---------------------------------------------------------------------------------------------------------------------------
         public async Task<bool> UserExists(string userName)
         {
             try

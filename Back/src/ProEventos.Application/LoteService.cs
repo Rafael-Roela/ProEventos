@@ -40,7 +40,7 @@ namespace ProEventos.Application
                 throw new Exception(ex.Message);
             }
         }
-
+//---------------------------------------------------------------------------------------------------------------------------
         public async Task<LoteDto[]> SaveLotes(int eventoId, LoteDto[] models)
         {
             try
@@ -76,7 +76,7 @@ namespace ProEventos.Application
                 throw new Exception(ex.Message);
             }
         }
-
+//---------------------------------------------------------------------------------------------------------------------------
         public async Task<bool> DeleteLote(int eventoId, int loteId)
         {
             try
@@ -92,7 +92,7 @@ namespace ProEventos.Application
                 throw new Exception(ex.Message);
             }
         }
-
+//---------------------------------------------------------------------------------------------------------------------------
         public async Task<LoteDto[]> GetLotesByEventoIdAsync(int eventoId)
         {
             try

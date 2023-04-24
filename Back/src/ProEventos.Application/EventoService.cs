@@ -44,7 +44,7 @@ namespace ProEventos.Application
             throw new Exception(ex.Message);
         }
     }
-
+//---------------------------------------------------------------------------------------------------------------------------
     public async Task<EventoDto> UpdateEvento(int userId, int eventoId, EventoDto model)
     {
         try
@@ -72,7 +72,7 @@ namespace ProEventos.Application
             throw new Exception(ex.Message);
         }
     }
-
+//---------------------------------------------------------------------------------------------------------------------------
     public async Task<bool> DeleteEvento(int userId, int eventoId)
     {
         try
@@ -88,7 +88,7 @@ namespace ProEventos.Application
             throw new Exception(ex.Message);
         }
     }
-
+//---------------------------------------------------------------------------------------------------------------------------
     public async Task<PageList<EventoDto>> GetAllEventosAsync(int userId, PageParams pageParams, bool includePalestrantes = false)
     {
         try
@@ -110,7 +110,7 @@ namespace ProEventos.Application
             throw new Exception(ex.Message);
         }
     }
-
+//---------------------------------------------------------------------------------------------------------------------------
     public async Task<EventoDto> GetEventoByIdAsync(int userId, int eventoId, bool includePalestrantes = false)
     {
         try
